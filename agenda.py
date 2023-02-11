@@ -24,11 +24,22 @@ def addCompromisso():
     
     agenda.append(c)
 
+def listCompromisso():
+    result = ""
+    for c in agenda:
+        result += c.imprimir() + "\n"
+
+    if result == "":
+        print("Agenda Vazia")
+    else:
+        print(result)
+
 print("I==========I")
 print("I  Agenda  I")
-print("I==========I\n")
+print("I==========I")
 
 while True:
+    print("\n")
     print("1 - Adicionar novo compromisso")
     print("2 - Consultar compromisso")
     print("3 - Atualizar compromisso")
@@ -54,6 +65,5 @@ while True:
             break
         case other:
             print("Opção inválida!")
-            continue
 
     print("\n")
