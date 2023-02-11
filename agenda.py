@@ -16,6 +16,14 @@ class Compromisso():
 
 agenda = []
 
+def addCompromisso():
+    c = Compromisso(input("Digite a data: "), 
+                    input("Digite o horário: "), 
+                    input("Digite a duração (em horas): "), 
+                    input("Forneça uma descrição do evento: "))
+    
+    agenda.append(c)
+
 print("I==========I")
 print("I  Agenda  I")
 print("I==========I\n")
@@ -29,7 +37,6 @@ while True:
     print("6 - Sair\n")
 
     op = input("Selecione uma opção: ")
-    print("\n")
 
     match op:
         case "1":
@@ -48,3 +55,5 @@ while True:
         case other:
             print("Opção inválida!")
             continue
+
+    print("\n")
