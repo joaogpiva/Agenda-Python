@@ -21,6 +21,11 @@ def addCompromisso():
                     input("Digite o horário: "), 
                     input("Digite a duração (em horas): "), 
                     input("Forneça uma descrição do evento: "))
+
+    for compromisso in agenda:
+        if compromisso.data == c.data and compromisso.hora == c.hora:
+            print("Essa data e horário já estão reservados para um compromisso existente.")
+            return
     
     agenda.append(c)
     print("\nCompromisso adicionado!")
