@@ -55,7 +55,26 @@ def searchCompromisso():
     else:
         print("\nNenhum compromisso encontrado.")
         
-
+def updateCompromisso():
+    index = -1
+    encontrado = False
+    data = input("Digite a data atual do compromisso: ")
+    hora = input("Digite a hora atual do compromisso: ")
+    for compromisso in agenda:
+        index += 1
+        if compromisso.data == data and compromisso.hora == hora:
+            print(f"Compromisso encontrado na posição {index + 1}!")
+            encontrado = True
+    if encontrado:
+        c = Compromisso(input("Digite a data: "), 
+                       input("Digite o horário: "), 
+                       input("Digite a duração (em horas): "), 
+                       input("Forneça uma descrição do evento: ")) 
+        agenda[index] = c
+        print("Compromisso atualizado com sucesso!")
+    else:
+        print("Compromisso não encontrado.")
+                
 
 def listCompromisso():
     result = ""
