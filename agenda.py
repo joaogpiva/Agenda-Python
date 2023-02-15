@@ -10,7 +10,7 @@ class Compromisso():
         result += f"Data: {self.data}\n"
         result += f"Hora: {self.hora}\n"
         result += f"Duração: {self.duracao} horas\n"
-        result += f"Descrição: {self.descricao}\n"
+        result += f"Descrição: {self.descricao}"
 
         return result
 
@@ -29,6 +29,33 @@ def addCompromisso():
     
     agenda.append(c)
     print("\nCompromisso adicionado!")
+
+def searchCompromisso():
+    modo = input("Digite 1 para buscar por data ou 2 para buscar por data e hora: ")
+    resultados = []
+    if modo == "1":
+        termo = input("Digite sua pesquisa: ")
+        for compromisso in agenda:
+            if compromisso.data == termo:
+                resultados.append(compromisso)
+    elif modo == "2":
+        data = input("Digite a data: ")
+        hora = input("Digite a hora: ")
+        for compromisso in agenda:
+            if compromisso.data == data and compromisso.hora == hora:
+                resultados.append(compromisso)
+    else:
+        print("Opção inválida.")
+        return
+
+    if len(resultados) > 0:
+        print("Compromissos encontrados:")
+        for compromisso in resultados:
+            print("\n" + compromisso.imprimir())
+    else:
+        print("\nNenhum compromisso encontrado.")
+        
+
 
 def listCompromisso():
     result = ""
@@ -59,7 +86,7 @@ while True:
         case "1":
             addCompromisso()
         case "2":
-            getCompromisso()
+            searchCompromisso()
         case "3":
             updateCompromisso()
         case "4":
