@@ -23,6 +23,7 @@ def addCompromisso():
                     input("Forneça uma descrição do evento: "))
     
     agenda.append(c)
+    print("\nCompromisso adicionado!")
 
 def listCompromisso():
     result = ""
@@ -65,5 +66,3 @@ while True:
             break
         case other:
             print("Opção inválida!")
-
-    print("\n")
