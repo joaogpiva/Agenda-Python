@@ -79,10 +79,10 @@ def updateCompromisso():
 def listCompromisso():
     result = ""
     for c in agenda:
-        result += c.imprimir() + "\n"
+        result += "\n\n" + c.imprimir()
 
     if result == "":
-        print("Agenda Vazia")
+        print("\nAgenda Vazia")
     else:
         print(result)
 
