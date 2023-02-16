@@ -116,19 +116,18 @@ while True:
 
     op = input("Selecione uma opção: ")
 
-    match op:
-        case "1":
-            addCompromisso()
-        case "2":
-            searchCompromisso()
-        case "3":
-            updateCompromisso()
-        case "4":
-            deleteCompromisso()
-        case "5":
-            listCompromisso()
-        case "6":
-            print("Finalizando...")
-            break
-        case other:
-            print("Opção inválida!")
+    if op == "1":
+        addCompromisso()
+    elif op == "2":
+        searchCompromisso()
+    elif op == "3":
+        updateCompromisso()
+    elif op == "4":
+        deleteCompromisso()
+    elif op == "5":
+        listCompromisso()
+    elif op == "6":
+        print("Finalizando...")
+        break
+    else:
+        print("Opção inválida!")
