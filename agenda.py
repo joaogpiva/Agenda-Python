@@ -1,11 +1,11 @@
 class Compromisso():
-    def __init__(self, data, hora, duracao, descricao):
+    def __init__(self, data, hora, duracao, descricao): # construtor básico da classe
         self.data = data
         self.hora = hora
         self.duracao = duracao
         self.descricao = descricao
     
-    def imprimir(self):
+    def imprimir(self): # criar o método de imprimir dentro da classe pra não repetir código
         result = ""
         result += f"Data: {self.data}\n"
         result += f"Hora: {self.hora}\n"
@@ -23,7 +23,7 @@ def addCompromisso():
                     input("Forneça uma descrição do evento: "))
 
     for compromisso in agenda:
-        if compromisso.data == c.data and compromisso.hora == c.hora:
+        if compromisso.data == c.data and compromisso.hora == c.hora: #verifica se já existe compromisso nessa data E (and) hora
             print("Essa data e horário já estão reservados para um compromisso existente.")
             return
     
