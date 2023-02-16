@@ -63,8 +63,8 @@ def updateCompromisso():
     for compromisso in agenda:
         index += 1
         if compromisso.data == data and compromisso.hora == hora:
-            print(f"Compromisso encontrado na posição {index + 1}!")
             encontrado = True
+            break
     if encontrado:
         c = Compromisso(input("Digite a data: "), 
                        input("Digite o horário: "), 
@@ -74,7 +74,22 @@ def updateCompromisso():
         print("Compromisso atualizado com sucesso!")
     else:
         print("Compromisso não encontrado.")
-                
+
+def deleteCompromisso():
+    index = -1
+    encontrado = False
+    data = input("Digite a data do compromisso: ")
+    hora = input("Digite a hora do compromisso: ")
+    for compromisso in agenda:
+        index += 1
+        if compromisso.data == data and compromisso.hora == hora:
+            encontrado = True
+            break
+    if encontrado:
+        agenda.pop(index)
+        print("Compromisso removido com sucesso!")
+    else:
+        print("Compromisso não encontrado.")
 
 def listCompromisso():
     result = ""
